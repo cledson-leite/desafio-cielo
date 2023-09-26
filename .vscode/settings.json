@@ -1,0 +1,9 @@
+{
+    "material-icon-theme.folders.associations": {
+        "adapters": "update",
+        "core": "app",
+        "external": "batch",
+        "ports": "connection",
+        "store": "resource",
+    }
+}
