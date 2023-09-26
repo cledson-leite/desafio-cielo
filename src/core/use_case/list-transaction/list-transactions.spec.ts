@@ -2,10 +2,11 @@ import { ListTransactionUsecase } from "./list-transaction"
 import { IListTransactionService } from '../../../ports/output/i-list-transaction';
 import { ListTransactionServiceStub } from "../mocks/list-transaction-service-stub";
 import { transactionFake } from "../mocks/transaction-fake";
+import { IListTransaction } from "../../../ports/input/i-list-transaction";
 
 describe('List Transaction Use Case', () => {
     let service: IListTransactionService
-    let sut: ListTransactionUsecase
+    let sut: IListTransaction
 
     beforeEach(() => {
         service = new ListTransactionServiceStub()

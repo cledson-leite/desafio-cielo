@@ -2,13 +2,14 @@ import  axios from "axios"
 import { ListTransactionService } from "./list-transactions-service"
 import { transactionFake } from '../../../core/use_case/mocks/transaction-fake';
 import {dbFake} from '../mocks/db-fake'
+import { IListTransactionService } from "../../../ports/output/i-list-transaction";
 
 jest.mock('axios', () => ({
     get: async () => Promise.resolve({data: dbFake})
 }))
 
 describe('List Transaction Use Case', () => {
-    let sut: ListTransactionService
+    let sut: IListTransactionService
 
     beforeEach(() => {
         sut = new ListTransactionService(axios)

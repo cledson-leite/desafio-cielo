@@ -1,6 +1,8 @@
 import { AxiosInstance } from 'axios';
 import { TransactionDto } from '../../../shared/dto/transaction-dto';
-export class ListTransactionService {
+import { IListTransactionService } from '../../../ports/output/i-list-transaction';
+
+export class ListTransactionService implements IListTransactionService {
     constructor(
         private readonly httpClient: AxiosInstance
     ){}
