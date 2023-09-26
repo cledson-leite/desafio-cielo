@@ -18,14 +18,13 @@ describe('List Transaction Use Case', () => {
         await sut.execute()
         expect(listSpy).toHaveBeenCalled()
     })
-    it('Should return an unexpected error message', async () => {
+    it('Should throw error received', async () => {
         jest.spyOn(service, 'list').mockRejectedValueOnce(new Error())
-        const result = await sut.execute()
-        expect(result).toEqual({success: false, message: 'Error Inesperado'})
+        const promise = sut.execute()
+        await expect(promise).rejects.toThrow()
     })
     it('Should return a list of transactions', async () => {
-        const data = [transactionFake]
         const result = await sut.execute()
-        expect(result).toEqual({success: true, data})
+        expect(result).toEqual([transactionFake])
     })
 })

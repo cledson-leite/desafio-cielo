@@ -17,16 +17,14 @@ describe('List Transaction Controller', () => {
         await sut.handle()
         expect(executeSpy).toHaveBeenCalled()
     })
-    it('Should return an unexpected error message', async () => {
-        const error = {success: false, message: 'Error Inesperado'}
-        jest.spyOn(input, 'execute').mockResolvedValueOnce(error)
-        const result = await sut.handle()
-        expect(result).toEqual({success: false, message: 'Error Inesperado'})
+    it('Should throw error received', async () => {
+       jest.spyOn(input, 'execute').mockRejectedValueOnce(new Error())
+        const promise = sut.handle()
+        await expect(promise).rejects.toThrow()
     })
     it('Should return a list of transactions', async () => {
-        const data = [transactionFake]
         const result = await sut.handle()
-        expect(result).toEqual({success: true, data})
+        expect(result).toEqual( [transactionFake])
     })
 
 })
