@@ -12,14 +12,10 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 75%;
     height: 100vh;
-
-    background-color: red;
 `;
 export const TopBar = styled.div`
     width: 100%;
     height: 70px;
-
-    background-color: aquamarine;
 `;
 export const BottonBar = styled.div`
     width: 100%;
