@@ -3,7 +3,7 @@ import { IListTransaction } from "../../../ports/input/i-list-transaction"
 import { ListTransactionStub } from "../mocks/list-transaction-stub"
 import { ListTransactionController } from "./list-transactions-controller"
 
-describe('List Transaction Use Case', () => {
+describe('List Transaction Controller', () => {
     let input: IListTransaction
     let sut: ListTransactionController
 
