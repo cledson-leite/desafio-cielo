@@ -4,10 +4,8 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     primary: string;
     secondary: string;
-    border: string;
+    terciary: string;
     bg: string;
     text: string;
-    sombra: string;
-    disable: string;
   }
 }

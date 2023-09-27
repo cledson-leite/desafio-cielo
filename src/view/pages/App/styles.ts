@@ -12,6 +12,10 @@ export const Content = styled.div`
     justify-content: space-between;
     width: 75%;
     height: 100vh;
+
+    @media (max-width: 560px) {
+        width: 100%;
+    }
 `;
 export const TopBar = styled.div`
     width: 100%;
@@ -26,6 +30,4 @@ export const BottonBar = styled.div`
 export const Main = styled.div`
     width: 100%;
     height: 86%;
-
-    background-color: yellow;
 `;
