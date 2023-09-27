@@ -10,6 +10,7 @@ describe('Header', () => {
     );
   })
   it('Should have the title sales report', () => {
-    expect(screen.queryByRole('title')).toBeInTheDocument();
+    const title = screen.queryByRole('title')
+    expect(title).toHaveTextContent('Relatório de vendas');
   })
 });
