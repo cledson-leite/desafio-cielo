@@ -1,4 +1,4 @@
-# Desafiio Cielo
+# Desafio Cielo
 
    Este é um projeto do desafio tecnico na seleção de colaboradores da Cielo realizado pela Ada.
    Sendo esse projeto passado na segunda semana do total de duas e tem o objetivo de avaliar candidato a vaga de frondend.
@@ -9,6 +9,9 @@
   O projeto solicita uma aplicação composta de uma tela onde o usuário consegue listar as transações realizada em determinado período em forma de tabela onde cada linha pode dar acesso ao modal de detalhamento desta transação
   Neste modal, além das informações, separa em celular também é possível voltar a tela inicial por um icon button localizado na parte superior esquerda do modal
   Essa aplicação é alimentada por uma api - fake no próprio repositório
+
+## Prototípo
+Design feito por [Cledson Leite](https://www.linkedin.com/in/cledson-leite/) com [figma](https://www.figma.com/file/QpyfVhBN3UreitRnYUY2Oi/Desafio-Cielo?type=design&node-id=0%3A1&mode=design&t=jqzGwmMegdHWYhpf-1)
 
 ## Tecnologia Usadas
   - reactjs
