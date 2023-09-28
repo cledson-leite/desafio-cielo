@@ -13,7 +13,11 @@ export const Content = styled.div`
     width: 75%;
     height: 100vh;
 
-    @media (max-width: 560px) {
+    @media (max-width: 960px) {
+        width: 90%;
+    }
+
+    @media (max-width: 630px) {
         width: 100%;
     }
 `;
@@ -24,10 +28,9 @@ export const TopBar = styled.div`
 export const BottonBar = styled.div`
     width: 100%;
     height: 70px;
-
-    background-color: aqua;
 `;
 export const Main = styled.div`
     width: 100%;
     height: 86%;
+    position: relative;
 `;

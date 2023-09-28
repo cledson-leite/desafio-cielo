@@ -10,10 +10,8 @@
   Neste modal, além das informações, separa em celular também é possível voltar a tela inicial por um icon button localizado na parte superior esquerda do modal
   Essa aplicação é alimentada por uma api - fake no próprio repositório
 
-## Prototípo
-Design feito por [Cledson Leite](https://www.linkedin.com/in/cledson-leite/) com [figma](https://www.figma.com/file/QpyfVhBN3UreitRnYUY2Oi/Desafio-Cielo?type=design&node-id=0%3A1&mode=design&t=jqzGwmMegdHWYhpf-1)
-
 ## Tecnologia Usadas
+  - nodejs@18
   - reactjs
   - styled-components
   - redux e redux-saga
@@ -49,6 +47,7 @@ Design feito por [Cledson Leite](https://www.linkedin.com/in/cledson-leite/) com
    │   └───types     
    ├───styles        
    └───view          
+      ├───providers
       ├───components
       └───pages     
          └───App
@@ -56,6 +55,7 @@ Design feito por [Cledson Leite](https://www.linkedin.com/in/cledson-leite/) com
 ```
 ## Inicialização
 ``` shell
+   #necessário uso do nodejs versão 18.x
    git https://github.com/cledson-leite/desafio-cielo.git
    cd desafio-cielo
    yarn || npm install

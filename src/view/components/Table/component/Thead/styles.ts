@@ -7,7 +7,7 @@ export const Container = styled.div`
     width: 100%;
     height: 60px;
     background-color: ${({theme}) => theme.bg};
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     text-align: center;
     color: ${({theme}) => theme.secondary};
