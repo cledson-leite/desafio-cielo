@@ -27,6 +27,7 @@ describe('List Transaction Use Case', () => {
     })
     it('Should return a list of transactions dto', async () => {
         const data = [transactionFake]
+        jest.spyOn(axios,'get').mockResolvedValueOnce({data})
         const result = await sut.list()
         expect(result).toEqual(data)
     })

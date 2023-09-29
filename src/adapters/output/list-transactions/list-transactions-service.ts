@@ -10,6 +10,7 @@ export class ListTransactionService implements IListTransactionService {
     async list(): Promise<TransactionDto[]>{
         const url = '/transactions'
         const result = await this.httpClient.get(url)
+        console.log(result.data)
         const transactions: TransactionDto[] = result.data
         
         const dto = transactions.map((transaction: any) => {
@@ -28,12 +29,12 @@ export class ListTransactionService implements IListTransactionService {
             transaction.status,
             transaction.grossAmount,
             transaction.netAmount,
-            transaction.administrationFee,
-            transaction.channelCode,
             transaction.withdrawAmount,
+            transaction.channelCode,
             transaction.minimumMDRAmmount,
             transaction.mdrTaxAmount,
             transaction.mdrFeeAmount,
+            transaction.administrationFee,
         )
         })
         return dto
