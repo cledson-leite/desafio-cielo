@@ -9,5 +9,5 @@ export const mask = (valueRaw: string) => {
       if (decimal.length > 6) {
         decimal = decimal.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
       }
-       return decimal;
+       return`R$ ${decimal}`;
     }

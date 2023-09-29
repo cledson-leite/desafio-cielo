@@ -13,5 +13,8 @@ export const Container = styled.div`
 export const Title = styled.h1`
     font-size: 2rem;
     font-weight: 700;
-    color: ${({theme}) => theme.text}
+    color: ${({theme}) => theme.text};
+    @media (max-width: 300px) {
+        font-size: 1.5rem;
+    }
 `

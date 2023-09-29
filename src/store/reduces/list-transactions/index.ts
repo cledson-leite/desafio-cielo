@@ -1,22 +1,28 @@
 import { AnyAction } from "redux";
 import * as Types from '../../types/list-transactions'
+import { modalWrapper } from "./wrapper/modal-wrapper";
+import { tableWrapper } from "./wrapper/table-wrapper";
 
 const initialState = {
     load: false,
-    list: [],
+    modal: [],
+    table: [],
     error: ""
 }
 
 export const listReducer = (state = initialState, action: AnyAction) => {
     switch (action.type) {
         case Types.LIST_REQUEST:
-            return {load:true, list: [], error: ''}
+            return {load: true, modal: [], table: [], error: ''}
         case Types.LIST_FAILURE:
             const error = action.payload
-            return {load:false, list: [], error}
+            return {load: false, modal: [], table: [], error}
         case Types.LIST_SUCCESS:
-            const list = action.payload
-            return {load:false, list, error: ''}
+            return {
+                load: false, 
+                modal: modalWrapper(action.payload), 
+                table: tableWrapper(action.payload), 
+                error: ''}
         default:
             state = {...initialState}
             return state

@@ -1,39 +1,32 @@
-import { useContext } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../store'
+
 import { TRow } from './component/TRow'
 import { THead } from './component/Thead'
+
 import * as Styled from './styles'
-import { ModalContext } from '../../provider/show-modal'
 
 
 export const Table = () => {
-    const {tableData} = useContext(ModalContext)
-    const texts = {
-    codigo: 'Codig',
-    data: 'Data',
-    canal: 'Canal',
-    tipo: 'Tipo',
-    bandeira: 'Bandeira',
-    valor_bruto: 'Valor Bruto',
-    valor_liquido: 'Valor Liquido',
-    estagio: 'Estágio',
-    }
-    const getTexts = (): string[] => {
-        return Object.keys(
-            tableData[0]).filter(key => Object.keys(texts).includes(key)
-            )
-    }
+    const {table} = useSelector((state: RootState) => state.transactions)
   return (
     <Styled.Container>
-        <THead texts={getTexts()} />
+        <THead />
         <Styled.TBody>
             {
-                tableData.map((cell, index) => (
-                    <TRow 
-                        key={index} 
-                        index={index} 
-                        texts={Object.values(cell)}
-                    />
-                ))
+                table
+                   ? table.map((cell, index) => (
+                        <TRow 
+                            key={index} 
+                            index={index} 
+                            texts={Object.values(cell)}
+                        />
+                    ))
+                    : <TRow 
+                            key={1} 
+                            index={0} 
+                            texts={['nada a acrecentar']}
+                        />
             }
         </Styled.TBody>
     </Styled.Container>

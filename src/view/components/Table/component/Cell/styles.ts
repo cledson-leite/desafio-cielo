@@ -19,4 +19,14 @@ export const Container = styled.span<{size:number, index: number}>`
             display: none;
         `}
     }
+    @media (max-width: 450px) {
+        ${({index}) => index === 4 && css`
+            display: none;
+        `}
+    }
+    @media (max-width: 300px) {
+        ${({index}) => index === 2 && css`
+            display: none;
+        `}
+    }
 `

@@ -1,10 +1,11 @@
-import { call, put } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { ListTransactionController } from '../../../adapters/input/list-transaction/list-transactions-controller'
 import { ListTransactionUsecase } from '../../../core/use_case/list-transaction/list-transaction'
 import { ListTransactionService } from '../../../adapters/output/list-transactions/list-transactions-service'
 import { api } from '../../../external/api'
 import * as Actions from '../../actions/list-transactions'
 import { TransactionDto } from '../../../shared/dto/transaction-dto';
+import { LIST_REQUEST } from '../../types/list-transactions';
 
 export const control = async () => {
     const service = new ListTransactionService(api)
@@ -20,6 +21,8 @@ export function* listRequestSaga(): Generator {
     } catch (error: any) {
         yield put(Actions.listFailure(error.message))
     }
-   
-    
+}
+
+export function* rootSaga(): Generator {
+    yield takeLatest(LIST_REQUEST, listRequestSaga)
 }

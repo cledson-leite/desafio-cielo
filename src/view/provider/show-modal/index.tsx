@@ -51,7 +51,7 @@ export const ModalContext = createContext<ContextProps>({
 })
 
 export const ModalProvider = ({children}: ProviderProps) => {
-    const [show, setShow] =useState(true)
+    const [show, setShow] =useState(false)
     const [idx, setIdx] =useState(0)
     const handleShow = (index?: number) => {
         if(index) setIdx(index)

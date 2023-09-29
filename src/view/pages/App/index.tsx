@@ -4,9 +4,15 @@ import { Table } from '../../components/Table'
 import * as Styled from './styles'
 import { Modal } from '../../components/Modal'
 import { ModalProvider } from '../../provider/show-modal'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react';
+import { listRequest } from '../../../store/actions/list-transactions'
 
 export const App = () => {
-  
+  const dispcth = useDispatch()
+  useEffect(() => {
+    dispcth(listRequest())
+  }, [])
   return (
     <Styled.Container >
       <Styled.Content  role='content'>

@@ -2,11 +2,15 @@ import '@testing-library/jest-dom';
 import { screen } from '@testing-library/dom';
 import { render } from '@testing-library/react';
 import { App } from './';
+import { Provider } from 'react-redux';
+import { store } from '../../../store';
 
 describe('App', () => {
   beforeEach(() => {
     render(
-      <App />,
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   })
   it('Should have a content', () => {

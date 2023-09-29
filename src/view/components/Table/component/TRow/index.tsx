@@ -10,7 +10,7 @@ type TRowProps = {
 
 export const TRow = ({index, texts}: TRowProps) => {
     const {handleShow} = useContext(ModalContext)
-     const sizes= [64,83,115,95,80,52,66,67]
+     const sizes= [64,83,115,95,80,66,66,67]
   return (
     <Styled.Container 
         odd={(index+1)%2==1} 
